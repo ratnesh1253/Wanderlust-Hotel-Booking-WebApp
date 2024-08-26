@@ -1,0 +1,118 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row mt-3 mb-3">
+  <div class="col-8 offset-2">
+    <h3>Create a New Listing</h3>
+    <form
+      method="POST"
+      action="/listings"
+      novalidate
+      class="needs-validation"
+      enctype="multipart/form-data"
+    >
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input
+          id="title"
+          class="form-control"
+          type="text"
+          name="listing[title]"
+          placeholder="Hotel name"
+          required
+        />
+        <div class="valid-feedback">Title looks good!</div>
+        <div class="invalid-feedback">Title cannot be empty</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          id="description"
+          class="form-control"
+          name="listing[description]"
+          placeholder="Provide brief description"
+          required
+        ></textarea>
+        <div class="invalid-feedback">Enter short description</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="image" class="form-label">Upload Listing Image</label>
+        <input
+          id="image"
+          class="form-control"
+          type="file"
+          name="listing[image]"
+          required
+        />
+        <div class="invalid-feedback">Image is required</div>
+      </div>
+
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="price" class="form-label">Price</label>
+          <input
+            id="price"
+            class="form-control"
+            name="listing[price]"
+            placeholder="e.g 1800"
+            required
+          />
+          <div class="invalid-feedback">Price must be a valid number</div>
+        </div>
+
+        <div class="mb-3 col-md-8">
+          <label for="country" class="form-label">Country</label>
+          <select
+            id="country"
+            class="form-control"
+            type="text"
+            name="listing[country]"
+            required
+          >
+            <option value="" disabled selected>Choose a country</option>
+            <option value="Australia">Australia</option>
+            <option value="Canada">Canada</option>
+            <option value="Costa Rica">Costa Rica</option>
+            <option value="Fiji">Fiji</option>
+            <option value="Greece">Greece</option>
+            <option value="Iceland">Iceland</option>
+            <option value="India">India</option>
+            <option value="Indonesia">Indonesia</option>
+            <option value="Italy">Italy</option>
+            <option value="Japan">Japan</option>
+            <option value="Maldives">Maldives</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Netherlands">Netherlands</option>
+            <option value="New Zealand">New Zealand</option>
+            <option value="Peru">Peru</option>
+            <option value="Russia">Russia</option>
+            <option value="South Africa">South Africa</option>
+            <option value="Switzerland">Switzerland</option>
+            <option value="Tanzania">Tanzania</option>
+            <option value="Thailand">Thailand</option>
+            <option value="United Arab Emirates">United Arab Emirates</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="United States">United States</option>
+          </select>
+          <div class="invalid-feedback">Select a country from list</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input
+          id="location"
+          class="form-control"
+          type="text"
+          name="listing[location]"
+          placeholder="Enter city or region"
+          required
+        />
+        <div class="invalid-feedback">Location is required</div>
+      </div>
+
+      <button class="btn btn-dark add-btn">Add</button>
+    </form>
+  </div>
+</div>
